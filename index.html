@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowling Sauna – Žďár nad Sázavou</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">BOWLING<span>SAUNA</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#services">Služby</a></li>
+                <li><a href="#pricing">Ceník</a></li>
+                <li><a href="#menu">Jídelní lístek</a></li>
+                <li><a href="#kids">Pro děti</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="tel:773494878" class="nav-cta">Rezervace</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-parallax" id="heroParallax"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <p class="hero-subtitle reveal-text">Centrum zábavy ve Žďáru nad Sázavou</p>
+                    <h1 class="hero-title reveal-text delay-1">BOWLING<br><span>SAUNA</span></h1>
+                    <p class="hero-desc reveal-text delay-2">8 profesionálních drah &bull; Restaurace &bull; Klimatizace</p>
+                    <div class="hero-actions reveal-text delay-3">
+                        <a href="tel:773494878" class="btn btn-primary">Rezervovat</a>
+                        <a href="#about" class="btn btn-outline">Více info</a>
+                    </div>
+                </div>
+                <div class="hero-badge-wrap reveal-text delay-2" aria-hidden="true">
+                    <div class="hero-badge">
+                        <div class="hero-badge-lane"></div>
+                        <div class="hero-badge-pins">
+                            <div class="hero-badge-pin"></div>
+                            <div class="hero-badge-pin"></div>
+                            <div class="hero-badge-pin"></div>
+                        </div>
+                        <div class="hero-badge-ball">
+                            <div class="hero-badge-hole hole-1"></div>
+                            <div class="hero-badge-hole hole-2"></div>
+                            <div class="hero-badge-hole hole-3"></div>
+                        </div>
+                        <div class="hero-badge-strike">STRIKE!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Bowlingových drah</span>
+                </div>
+                <div class="stat-item fade-up" data-delay="100">
+                    <span class="stat-number" data-target="22">0</span>
+                    <span class="stat-label">Ročníků bowlingové ligy</span>
+                </div>
+                <div class="stat-item fade-up" data-delay="200">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Dráhy s mantinely pro děti</span>
+                </div>
+                <div class="stat-item fade-up" data-delay="300">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-label">Max hráčů na dráhu</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images fade-up">
+                    <div class="about-img-wrapper img-hover-zoom">
+                        <img src="http://bowlingsauna.cz/wp-content/uploads/2021/05/bowl4.jpg" alt="Bowling dráhy" loading="lazy">
+                    </div>
+                    <div class="about-img-wrapper img-hover-zoom offset">
+                        <img src="http://bowlingsauna.cz/wp-content/gallery/galerie/01.JPG" alt="Bowlingová koule" loading="lazy">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-tag fade-up">O nás</span>
+                    <h2 class="section-title fade-up">Vítejte v centru<br><span class="highlight">Bowling Sauna</span></h2>
+                    <p class="fade-up">Naše centrum je vybaveno osmi profesionálními bowlingovými drahami v plně klimatizovaném prostředí. Pochutnat si můžete na specialitách naší kuchyně.</p>
+                    <p class="fade-up">K dispozici je oddělený salonek pro firemní večírky s možností rautových menu, nebo si užijte posezení na zahrádce. Pro nejmenší máme připravené 4 dráhy s automatickými vyjížděcími mantinely.</p>
+                    <div class="about-features fade-up">
+                        <div class="feature-tag">Klimatizace</div>
+                        <div class="feature-tag">Nekuřácké</div>
+                        <div class="feature-tag">Zahrádka</div>
+                        <div class="feature-tag">Salonek</div>
+                        <div class="feature-tag">Wi-Fi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag fade-up">Co nabízíme</span>
+                <h2 class="section-title fade-up">Naše <span class="highlight">služby</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon" aria-hidden="true">
+                        🎳
+                    </div>
+                    <h3>Bowling</h3>
+                    <p>8 profesionálních drah s nejmodernějším vybavením pro skvělý zážitek z hry.</p>
+                </div>
+                <div class="service-card fade-up" data-delay="100">
+                    <div class="service-icon" aria-hidden="true">
+                        🍽️
+                    </div>
+                    <h3>Restaurace</h3>
+                    <p>Vychutnejte si steaky, topinky, palačinky a další speciality naší kuchyně.</p>
+                </div>
+                <div class="service-card fade-up" data-delay="200">
+                    <div class="service-icon" aria-hidden="true">
+                        🧒
+                    </div>
+                    <h3>Pro děti</h3>
+                    <p>4 dráhy s vyjížděcími mantinely a dětské menu pro ty nejmenší hráče.</p>
+                </div>
+                <div class="service-card fade-up" data-delay="300">
+                    <div class="service-icon" aria-hidden="true">
+                        🏆
+                    </div>
+                    <h3>Bowlingová liga</h3>
+                    <p>Tradiční Žďárská bowlingová liga — již 22. ročník! Přihlaste svůj tým.</p>
+                </div>
+                <div class="service-card fade-up" data-delay="400">
+                    <div class="service-icon" aria-hidden="true">
+                        💼
+                    </div>
+                    <h3>Firemní akce</h3>
+                    <p>Oddělený salonek, rautové menu a kompletní servis pro vaši firemní akci.</p>
+                </div>
+                <div class="service-card fade-up" data-delay="500">
+                    <div class="service-icon" aria-hidden="true">
+                        🎁
+                    </div>
+                    <h3>Dárkové poukazy</h3>
+                    <p>Poukazy v hodnotě 500 a 1 000 Kč — ideální dárek pro milovníky bowlingu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARALLAX DIVIDER -->
+    <section class="parallax-divider" id="parallaxDivider">
+        <div class="parallax-bg"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content fade-up">
+            <h2>Ať to padá!</h2>
+            <p>Rezervujte si dráhu ještě dnes</p>
+            <a href="tel:773494878" class="btn btn-primary">773 494 878</a>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag fade-up">Ceník</span>
+                <h2 class="section-title fade-up">Ceník <span class="highlight">bowlingu</span></h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card fade-up">
+                    <div class="price-badge">Výhodné</div>
+                    <h3>Po — Čt</h3>
+                    <p class="price-time">15:00 — 00:00</p>
+                    <div class="price-amount"><span class="price-value" data-target="330">0</span> <span class="price-currency">Kč/hod</span></div>
+                    <ul class="price-features">
+                        <li>8 profesionálních drah</li>
+                        <li>Max 6 hráčů na dráhu</li>
+                        <li>Půjčení obuvi 15 Kč</li>
+                    </ul>
+                    <a href="tel:773494878" class="btn btn-outline">Rezervovat</a>
+                </div>
+                <div class="price-card featured fade-up" data-delay="100">
+                    <div class="price-badge">Ostatní časy</div>
+                    <h3>Pá 13–17h &amp; Ne</h3>
+                    <p class="price-time">Viz otevírací doba</p>
+                    <div class="price-amount"><span class="price-value" data-target="390">0</span> <span class="price-currency">Kč/hod</span></div>
+                    <ul class="price-features">
+                        <li>8 profesionálních drah</li>
+                        <li>Max 6 hráčů na dráhu</li>
+                        <li>Půjčení obuvi 15 Kč</li>
+                    </ul>
+                    <a href="tel:773494878" class="btn btn-primary">Rezervovat</a>
+                </div>
+                <div class="price-card fade-up" data-delay="200">
+                    <div class="price-badge">Víkend</div>
+                    <h3>Pá — So</h3>
+                    <p class="price-time">17:00 — 02:00</p>
+                    <div class="price-amount"><span class="price-value" data-target="450">0</span> <span class="price-currency">Kč/hod</span></div>
+                    <ul class="price-features">
+                        <li>8 profesionálních drah</li>
+                        <li>Max 6 hráčů na dráhu</li>
+                        <li>Půjčení obuvi 15 Kč</li>
+                    </ul>
+                    <a href="tel:773494878" class="btn btn-outline">Rezervovat</a>
+                </div>
+            </div>
+            <p class="pricing-note fade-up">Vstup na dráhy je povolen pouze v bowlingové obuvi. Platba pouze hotově.</p>
+        </div>
+    </section>
+
+    <!-- OPENING HOURS -->
+    <section class="hours section" id="hours">
+        <div class="container">
+            <div class="hours-card fade-up">
+                <h2>Otevírací doba</h2>
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <span class="hours-day">Po — Čt</span>
+                        <span class="hours-line"></span>
+                        <span class="hours-time">15:00 — 00:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Pá — So</span>
+                        <span class="hours-line"></span>
+                        <span class="hours-time">13:00 — 02:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Neděle</span>
+                        <span class="hours-line"></span>
+                        <span class="hours-time">13:00 — 22:00</span>
+                    </div>
+                </div>
+                <p class="hours-note">Rezervace: <a href="tel:773494878">773 494 878</a> nebo <a href="tel:566620222">566 620 222</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag fade-up">Restaurace</span>
+                <h2 class="section-title fade-up">Jídelní <span class="highlight">lístek</span></h2>
+            </div>
+            <div class="menu-tabs fade-up">
+                <button class="menu-tab active" data-tab="steaky">Steaky</button>
+                <button class="menu-tab" data-tab="ostatni">Ostatní</button>
+                <button class="menu-tab" data-tab="palacinky">Palačinky</button>
+                <button class="menu-tab" data-tab="prilohy">Přílohy</button>
+            </div>
+            <div class="menu-content">
+                <div class="menu-panel active" id="tab-steaky">
+                    <div class="menu-category fade-up">
+                        <h3>Masíčko z daleké Ameriky</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Hovězí steak Argentina — omáčka bordeaux</span>
+                                <span class="menu-item-desc">rumpsteak, máslo, šalotka, č. víno, zel. obloha</span>
+                            </div>
+                            <span class="menu-item-price">329 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Hovězí steak Argentina — omáčka mornay</span>
+                                <span class="menu-item-desc">rumpsteak, smetana, niva, zel. obloha</span>
+                            </div>
+                            <span class="menu-item-price">329 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Hovězí steak Argentina — pepřová omáčka</span>
+                                <span class="menu-item-desc">rumpsteak, vývar, smetana, pepř, zel. obloha</span>
+                            </div>
+                            <span class="menu-item-price">329 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Hovězí steak Argentina — bylinkové máslo</span>
+                                <span class="menu-item-desc">rumpsteak, bylinkové máslo, zel. obloha</span>
+                            </div>
+                            <span class="menu-item-price">329 Kč</span>
+                        </div>
+                        <div class="menu-item featured-dish">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Argentinský Rumpsteak „BOWLING" ⭐</span>
+                                <span class="menu-item-desc">příloha chléb — naše specialita</span>
+                            </div>
+                            <span class="menu-item-price">349 Kč</span>
+                        </div>
+                    </div>
+                    <div class="menu-category fade-up">
+                        <h3>Z našich luhů a hájů</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Vepřový steak — omáčka bordeaux</span>
+                                <span class="menu-item-desc">vepřová kotleta, máslo, šalotka, č. víno</span>
+                            </div>
+                            <span class="menu-item-price">209 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Vepřový steak — omáčka mornay</span>
+                                <span class="menu-item-desc">vepřová kotleta, smetana, niva</span>
+                            </div>
+                            <span class="menu-item-price">209 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Kuřecí prsa — výběr omáček</span>
+                                <span class="menu-item-desc">bordeaux / mornay / pepřová / bylinkové máslo</span>
+                            </div>
+                            <span class="menu-item-price">199 Kč</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-panel" id="tab-ostatni">
+                    <div class="menu-category fade-up">
+                        <h3>Různé dobrůtky</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Topinka s masovou směsí a sýrem</span>
+                            </div>
+                            <span class="menu-item-price">135 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Topinka se sýrem</span>
+                            </div>
+                            <span class="menu-item-price">59 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Žďárská grilovaná klobáska</span>
+                                <span class="menu-item-desc">s hořčicí, křenem a zel. oblohou</span>
+                            </div>
+                            <span class="menu-item-price">125 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Smažený sýr</span>
+                            </div>
+                            <span class="menu-item-price">119 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Grilovaný hermelín se zeleným pestem</span>
+                                <span class="menu-item-desc">doporučujeme s křupavou bagetou</span>
+                            </div>
+                            <span class="menu-item-price">119 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Zeleninový salát „BOWLING"</span>
+                                <span class="menu-item-desc">paprika, rajčata, okurka, sýr</span>
+                            </div>
+                            <span class="menu-item-price">85 Kč</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-panel" id="tab-palacinky">
+                    <div class="menu-category fade-up">
+                        <h3>Domácí palačinky</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Palačinka s marmeládou (2 ks)</span>
+                            </div>
+                            <span class="menu-item-price">109 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Palačinka s marmeládou a šlehačkou (2 ks)</span>
+                            </div>
+                            <span class="menu-item-price">119 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Palačinka s čokoládou a ořechy (2 ks)</span>
+                            </div>
+                            <span class="menu-item-price">119 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Palačinka se skořicí, čokoládou, ořechy a šlehačkou (2 ks)</span>
+                            </div>
+                            <span class="menu-item-price">129 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Vanilkový zmrzlinový pohár</span>
+                            </div>
+                            <span class="menu-item-price">35 Kč</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-panel" id="tab-prilohy">
+                    <div class="menu-category fade-up">
+                        <h3>Přílohy</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Pečivo (2 ks)</span>
+                            </div>
+                            <span class="menu-item-price">15 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Zapečená křupavá bageta</span>
+                            </div>
+                            <span class="menu-item-price">30 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Hranolky (200 g)</span>
+                            </div>
+                            <span class="menu-item-price">52 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Americké brambory (200 g)</span>
+                            </div>
+                            <span class="menu-item-price">52 Kč</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="menu-item-name">Americké brambory s nivou (200 g)</span>
+                            </div>
+                            <span class="menu-item-price">95 Kč</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="menu-note fade-up">Teplá jídla: Po–Čt do 21:00 | Pá–So do 23:00 | Ostatní časy dle telefonické objednávky</p>
+        </div>
+    </section>
+
+    <!-- KIDS -->
+    <section class="kids section" id="kids">
+        <div class="container">
+            <div class="kids-grid">
+                <div class="kids-text">
+                    <span class="section-tag fade-up">Pro rodiny</span>
+                    <h2 class="section-title fade-up">Bowling pro <span class="highlight">děti</span></h2>
+                    <p class="fade-up">Pro děti máme připravené 4 dráhy s vyjížděcími mantinely, které zabrání hodu koule do žlábku. Funkce mantinelů je volitelná pro každého hráče — dospělému se automaticky schovají a dítěti se opět automaticky zdvihnou.</p>
+                    <div class="kids-features fade-up">
+                        <div class="kids-feature">
+                            <span class="kids-feature-icon">🛡️</span>
+                            <div>
+                                <h4>Automatické mantinely</h4>
+                                <p>Volitelné pro každého hráče individuálně</p>
+                            </div>
+                        </div>
+                        <div class="kids-feature">
+                            <span class="kids-feature-icon">🚭</span>
+                            <div>
+                                <h4>Nekuřácké prostředí</h4>
+                                <p>V celém objektu platí zákaz kouření</p>
+                            </div>
+                        </div>
+                        <div class="kids-feature">
+                            <span class="kids-feature-icon">🍟</span>
+                            <div>
+                                <h4>Dětské menu</h4>
+                                <p>Kuřecí prsíčka, smažený sýr, palačinky od 109 Kč</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kids-image fade-up">
+                    <div class="img-hover-zoom">
+                        <img src="http://bowlingsauna.cz/wp-content/gallery/galerie/02.JPG" alt="Bowling pro děti" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag fade-up">Kde nás najdete</span>
+                <h2 class="section-title fade-up"><span class="highlight">Kontakt</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Adresa</h4>
+                                <p>Jungmannova 2278/16<br>Žďár nad Sázavou 1<br>591 01</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p><a href="tel:773494878">773 494 878</a><br><a href="tel:566620222">566 620 222</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p><a href="mailto:bowlzdar@seznam.cz">bowlzdar@seznam.cz</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map fade-up" data-delay="100">
+                    <iframe src="https://frame.mapy.cz/s/guzolevaso" width="100%" height="400" frameborder="0" loading="lazy" title="Mapa"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">BOWLING<span>SAUNA</span></a>
+                    <p>Centrum zábavy ve Žďáru nad Sázavou. 8 profesionálních bowlingových drah, restaurace a příjemné prostředí.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigace</h4>
+                    <ul>
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#services">Služby</a></li>
+                        <li><a href="#pricing">Ceník</a></li>
+                        <li><a href="#menu">Jídelní lístek</a></li>
+                        <li><a href="#kids">Pro děti</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Otevírací doba</h4>
+                    <ul>
+                        <li>Po — Čt: 15:00 — 00:00</li>
+                        <li>Pá — So: 13:00 — 02:00</li>
+                        <li>Ne: 13:00 — 22:00</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Rezervace</h4>
+                    <p><a href="tel:773494878">773 494 878</a></p>
+                    <p><a href="mailto:bowlzdar@seznam.cz">bowlzdar@seznam.cz</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bowling Sauna. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
