@@ -16,6 +16,11 @@
     --radius: 16px;
     --radius-sm: 8px;
     --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --sb-width: 72px;
+    --neon-cyan: #00e5ff;
+    --neon-orange: #ff5722;
+    --dark-lane: #0a0e1a;
+    --dark-mid: #111827;
 }
 
 *, *::before, *::after {
@@ -27,6 +32,11 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -35,6 +45,7 @@ body {
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
+    padding-right: 84px;
 }
 
 a {
@@ -52,6 +63,170 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+#lane-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--sb-width);
+    height: 100vh;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+#lane-scrollbar .lane-track {
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 9px,
+            rgba(0, 229, 255, 0.04) 9px,
+            rgba(0, 229, 255, 0.04) 10px
+        ),
+        linear-gradient(180deg, #0a0e1a 0%, #0d1320 40%, #0a0e1a 70%, #0d1320 100%);
+    box-shadow: inset 0 0 30px rgba(0, 229, 255, 0.05), 2px 0 12px rgba(0, 0, 0, 0.6);
+}
+
+#lane-scrollbar .lane-track::before,
+#lane-scrollbar .lane-track::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan), 0 0 20px rgba(0, 229, 255, 0.4);
+    opacity: 0.85;
+}
+
+#lane-scrollbar .lane-track::before {
+    left: 10px;
+}
+
+#lane-scrollbar .lane-track::after {
+    right: 10px;
+}
+
+#lane-scrollbar .lane-glow-strip {
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    box-shadow: 0 0 6px var(--neon-cyan), 0 0 14px rgba(0, 229, 255, 0.3);
+    opacity: 0.5;
+}
+
+#lane-scrollbar .foul-line {
+    position: absolute;
+    top: 48px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: var(--neon-orange);
+    border-radius: 1px;
+    box-shadow: 0 0 8px var(--neon-orange), 0 0 20px rgba(255, 87, 34, 0.5);
+}
+
+#lane-scrollbar .arrow-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid rgba(0, 229, 255, 0.5);
+    filter: drop-shadow(0 0 4px var(--neon-cyan));
+}
+
+#lane-scrollbar .pin-deck {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, #0a0e1a, #060810);
+    border-top: 2px solid var(--neon-cyan);
+    box-shadow: 0 -4px 16px rgba(0, 229, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 6px 4px 4px;
+}
+
+#lane-scrollbar .pin {
+    width: 9px;
+    height: 16px;
+    background: radial-gradient(ellipse at 35% 25%, #ffffff 0%, #dde8f0 40%, #aabfcc 100%);
+    border-radius: 50% 50% 38% 38% / 55% 55% 38% 38%;
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 1px;
+    position: relative;
+}
+
+#lane-scrollbar .pin::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 5px;
+    background: rgba(255, 87, 34, 0.85);
+    border-radius: 2px;
+    box-shadow: 0 0 3px var(--neon-orange);
+}
+
+#bowling-ball {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 26%, rgba(255, 200, 150, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 68% 70%, rgba(0, 0, 0, 0.4) 0%, transparent 45%),
+        radial-gradient(ellipse at center, #ff6b35 0%, #e84118 45%, #a02808 100%);
+    box-shadow:
+        0 0 14px rgba(255, 87, 34, 0.7),
+        0 0 30px rgba(255, 87, 34, 0.3),
+        0 6px 16px rgba(0, 0, 0, 0.7),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.4),
+        inset 3px 3px 10px rgba(255, 180, 120, 0.2);
+    transition: top 0.04s linear;
+    will-change: top;
+    z-index: 10;
+}
+
+#bowling-ball .shine {
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    width: 14px;
+    height: 9px;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.55) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#ball-holes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .section {
@@ -1386,6 +1561,14 @@ img {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-right: 0;
+    }
+
+    #lane-scrollbar {
+        display: none;
+    }
+
     .hero-badge {
         width: 200px;
         height: 200px;

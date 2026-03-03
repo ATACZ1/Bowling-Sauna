@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initMenuTabs();
     initSmoothScroll();
+    initLaneScrollbar();
 });
 
 /* ----------------------------------------
@@ -200,4 +201,102 @@ function initSmoothScroll() {
             }
         });
     });
+}
+
+/* ----------------------------------------
+   LANE SCROLLBAR — Custom bowling indicator
+   ---------------------------------------- */
+function initLaneScrollbar() {
+    const ball = document.getElementById('bowling-ball');
+    const holesGroup = document.getElementById('holes-group');
+
+    if (!ball || !holesGroup) {
+        return;
+    }
+
+    const BALL_SIZE = 46;
+    const PIN_DECK_H = 60;
+    const FOUL_LINE_TOP = 56;
+
+    let lastScrollY = window.scrollY;
+    let isRolling = false;
+    let stopTimer = null;
+    let angle = 0;
+    let rafId = null;
+    let lastTime = null;
+
+    function spinLoop(ts) {
+        if (!isRolling) return;
+
+        if (lastTime !== null) {
+            angle = (angle + (ts - lastTime) * 0.38) % 360;
+            holesGroup.setAttribute('transform', `rotate(${angle},23,23)`);
+        }
+
+        lastTime = ts;
+        rafId = requestAnimationFrame(spinLoop);
+    }
+
+    function startSpin() {
+        if (isRolling) return;
+        isRolling = true;
+        lastTime = null;
+        rafId = requestAnimationFrame(spinLoop);
+    }
+
+    function stopSpin() {
+        isRolling = false;
+        lastTime = null;
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+    }
+
+    function triggerStrike() {
+        const pins = document.querySelectorAll('#lane-scrollbar .pin');
+        pins.forEach((pin) => {
+            pin.style.transition = 'transform 0.4s ease, opacity 0.5s ease';
+            const randomAngle = (Math.random() - 0.5) * 90;
+            const distance = 10 + Math.random() * 22;
+            pin.style.transform = `rotate(${randomAngle}deg) translateY(${distance}px)`;
+            pin.style.opacity = '0';
+        });
+
+        setTimeout(() => {
+            pins.forEach((pin) => {
+                pin.style.transition = 'transform 0.7s ease, opacity 0.6s ease';
+                pin.style.transform = '';
+                pin.style.opacity = '1';
+            });
+        }, 1400);
+    }
+
+    function updateBall() {
+        const vh = window.innerHeight;
+        const scrollable = document.documentElement.scrollHeight - vh;
+        const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+        const trackStart = FOUL_LINE_TOP + BALL_SIZE / 2;
+        const trackEnd = vh - PIN_DECK_H - BALL_SIZE / 2 - 4;
+        const topPos = trackStart + progress * (trackEnd - trackStart);
+        ball.style.top = `${topPos - BALL_SIZE / 2}px`;
+
+        if (Math.abs(window.scrollY - lastScrollY) > 0.5) {
+            startSpin();
+            clearTimeout(stopTimer);
+            stopTimer = setTimeout(() => {
+                stopSpin();
+                if (progress > 0.97) {
+                    triggerStrike();
+                }
+            }, 180);
+        }
+
+        lastScrollY = window.scrollY;
+    }
+
+    updateBall();
+    window.addEventListener('scroll', updateBall, { passive: true });
+    window.addEventListener('resize', updateBall);
 }
