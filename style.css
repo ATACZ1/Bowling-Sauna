@@ -318,7 +318,7 @@ img {
 .hero-parallax {
     position: absolute;
     inset: -20%;
-    background: url('http://bowlingsauna.cz/wp-content/uploads/2021/05/bowl4.jpg') center/cover no-repeat;
+    background: url('https://images.weserv.nl/?url=bowlingsauna.cz/wp-content/uploads/2021/05/bowl4.jpg') center/cover no-repeat;
     will-change: transform;
 }
 
@@ -819,7 +819,7 @@ img {
 .parallax-bg {
     position: absolute;
     inset: -20%;
-    background: url('http://bowlingsauna.cz/wp-content/gallery/galerie/26.jpg') center/cover no-repeat;
+    background: url('https://images.weserv.nl/?url=bowlingsauna.cz/wp-content/gallery/galerie/26.jpg') center/cover no-repeat;
     will-change: transform;
 }
 
