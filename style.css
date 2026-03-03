@@ -79,7 +79,11 @@ img {
     pointer-events: none;
 }
 
-#lane-scrollbar .lane-track {
+#bowling-ball {
+    pointer-events: auto;
+}
+
+.lane-track {
     position: absolute;
     inset: 0;
     background:
@@ -94,8 +98,8 @@ img {
     box-shadow: inset 0 0 30px rgba(0, 229, 255, 0.05), 2px 0 12px rgba(0, 0, 0, 0.6);
 }
 
-#lane-scrollbar .lane-track::before,
-#lane-scrollbar .lane-track::after {
+.lane-track::before,
+.lane-track::after {
     content: '';
     position: absolute;
     top: 0;
@@ -106,15 +110,15 @@ img {
     opacity: 0.85;
 }
 
-#lane-scrollbar .lane-track::before {
+.lane-track::before {
     left: 10px;
 }
 
-#lane-scrollbar .lane-track::after {
+.lane-track::after {
     right: 10px;
 }
 
-#lane-scrollbar .lane-glow-strip {
+.lane-glow-strip {
     position: absolute;
     left: 13px;
     right: 13px;
@@ -124,7 +128,7 @@ img {
     opacity: 0.5;
 }
 
-#lane-scrollbar .foul-line {
+.foul-line {
     position: absolute;
     top: 48px;
     left: 10px;
@@ -135,7 +139,7 @@ img {
     box-shadow: 0 0 8px var(--neon-orange), 0 0 20px rgba(255, 87, 34, 0.5);
 }
 
-#lane-scrollbar .arrow-marker {
+.arrow-marker {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -147,7 +151,7 @@ img {
     filter: drop-shadow(0 0 4px var(--neon-cyan));
 }
 
-#lane-scrollbar .pin-deck {
+.pin-deck {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -163,7 +167,7 @@ img {
     padding: 6px 4px 4px;
 }
 
-#lane-scrollbar .pin {
+.pin {
     width: 9px;
     height: 16px;
     background: radial-gradient(ellipse at 35% 25%, #ffffff 0%, #dde8f0 40%, #aabfcc 100%);
@@ -173,7 +177,7 @@ img {
     position: relative;
 }
 
-#lane-scrollbar .pin::after {
+.pin::after {
     content: '';
     position: absolute;
     top: 3px;
@@ -203,9 +207,22 @@ img {
         0 6px 16px rgba(0, 0, 0, 0.7),
         inset 0 -3px 8px rgba(0, 0, 0, 0.4),
         inset 3px 3px 10px rgba(255, 180, 120, 0.2);
-    transition: top 0.04s linear;
+    cursor: grab;
     will-change: top;
     z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#bowling-ball.dragging {
+    cursor: grabbing;
+    transition: none !important;
+    box-shadow:
+        0 0 26px rgba(255, 87, 34, 1),
+        0 0 55px rgba(255, 87, 34, 0.6),
+        0 6px 16px rgba(0, 0, 0, 0.7),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.4),
+        inset 3px 3px 10px rgba(255, 180, 120, 0.2);
 }
 
 #bowling-ball .shine {
@@ -227,6 +244,75 @@ img {
     border-radius: 50%;
     overflow: hidden;
     pointer-events: none;
+}
+
+#strike-flash {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(255, 220, 50, 0.95), rgba(255, 87, 34, 0.7), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+    transition: opacity 0.08s;
+}
+
+#strike-label {
+    position: absolute;
+    bottom: 66px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #ffd700;
+    text-shadow: 0 0 8px #ff8c00, 0 0 20px #ff4500;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 21;
+    opacity: 0;
+}
+
+#drag-hint {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    pointer-events: none;
+    z-index: 15;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#drag-hint span {
+    font-size: 8px;
+    color: rgba(0, 229, 255, 0.8);
+    text-align: center;
+    white-space: nowrap;
+    font-family: sans-serif;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+#drag-hint .hint-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid rgba(0, 229, 255, 0.8);
+    filter: drop-shadow(0 0 4px var(--neon-cyan));
+    animation: ab 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes ab {
+    from { transform: translateY(0); }
+    to { transform: translateY(5px); }
 }
 
 .section {
